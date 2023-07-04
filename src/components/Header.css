@@ -1,0 +1,48 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 2.5rem auto;
+    width: 600px;
+}
+
+.score-container{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 45px;
+    border-radius: 8px;
+}
+
+.score-container h3{
+    color: hsl(229, 64%, 46%);
+}
+
+.score-container span{
+    font-size: 3.5rem;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+    color: hsl(229, 25%, 31%);
+}
+
+@media screen and (max-width:426px) {
+    .header-container{
+        width: 90vw;
+    }
+
+    .header-container img{
+        width: 130px;
+    }
+
+    .score-container{
+        padding: 5px 30px;
+    }
+
+    .score-container span{
+        font-size: 3.2rem;
+    }
+}

@@ -1,0 +1,79 @@
+.main-container {
+  background: url("../images/bg-triangle.svg") center center/50% no-repeat;
+  height: 300px;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  position: relative;
+}
+
+.main-container button {
+  width: 180px;
+  height: 180px;
+  border: 25px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.main-container button.paper {
+  background: url(../images/icon-paper.svg) center center/50% no-repeat, #f0f0f0;
+  border-color: hsl(230, 89%, 65%);
+  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(230, 89%, 62%);
+  left: 75px;
+  top: -65px;
+}
+
+.main-container button.scissors {
+  background: url(../images/icon-scissors.svg) center center/50% no-repeat,
+    #f0f0f0;
+    border-color: hsl(40, 84%, 53%);
+  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(39, 89%, 49%);
+  right: 75px;
+  top: -65px;
+  left: auto;
+}
+
+.main-container button.rock {
+  background: url(../images/icon-rock.svg) center center/50% no-repeat, #f0f0f0;
+  border-color: hsl(349, 70%, 56%);
+  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(349, 71%, 52%);
+  left: 210px;
+  top: auto;
+  bottom: -45px;
+}
+
+.main-container button.clicked {
+  box-shadow: inset 0px 0px hsl(220, 11%, 83%), 0px 0px #fff;
+  transform: translate(0px, 8px);
+}
+
+@media screen and (max-width:426px) {
+  .main-container{
+    width: 350px;
+    background-size: 70%;
+    margin-top: 60px;
+  }
+  
+  .main-container button{
+    width: 140px;
+    height: 140px;
+    border-width: 15px;
+  }
+  
+  .main-container button.paper{
+    box-shadow: inset 0px 4px hsl(220, 11%, 83%), 0px 4px hsl(230, 89%, 62%);
+    top: -10px;
+    left: 10px;
+  }
+  .main-container button.scissors{
+    box-shadow: inset 0px 4px hsl(220, 11%, 83%), 0px 4px hsl(39, 89%, 49%);
+    right: 10px;
+    top: -10px;
+  }
+  .main-container button.rock{
+    box-shadow: inset 0px 4px hsl(220, 11%, 83%), 0px 4px hsl(349, 71%, 52%);
+    left: 105px;
+    bottom: 10px;
+  }
+}
