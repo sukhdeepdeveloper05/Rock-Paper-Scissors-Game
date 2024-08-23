@@ -6,29 +6,29 @@ export const Result = (props) => {
   const [winner, setWinner] = useState("");
 
   useEffect(() => {
+    const checkResult = () => {
+      if (
+        (props.userItem === "Paper") & (props.compItem === "Scissors") ||
+        (props.userItem === "Scissors") & (props.compItem === "Rock") ||
+        (props.userItem === "Rock") & (props.compItem === "Paper")
+      ) {
+        setWinner("comp");
+        props.setScore(props.score - 1);
+      } else if (
+        (props.userItem === "Paper") & (props.compItem === "Rock") ||
+        (props.userItem === "Scissors") & (props.compItem === "Paper") ||
+        (props.userItem === "Rock") & (props.compItem === "Scissors")
+      ) {
+        setWinner("you");
+        props.setScore(props.score + 1);
+      }
+    };
+    
     setTimeout(() => {
       setIsCompPicked("picked");
       checkResult();
     }, 1000);
   }, [props.userItem]);
-
-  const checkResult = () => {
-    if (
-      (props.userItem === "Paper") & (props.compItem === "Scissors") ||
-      (props.userItem === "Scissors") & (props.compItem === "Rock") ||
-      (props.userItem === "Rock") & (props.compItem === "Paper")
-    ) {
-      setWinner("comp");
-      props.setScore(props.score - 1);
-    } else if (
-      (props.userItem === "Paper") & (props.compItem === "Rock") ||
-      (props.userItem === "Scissors") & (props.compItem === "Paper") ||
-      (props.userItem === "Rock") & (props.compItem === "Scissors")
-    ) {
-      setWinner("you");
-      props.setScore(props.score + 1);
-    }
-  };
 
   return (
     <div
