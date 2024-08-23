@@ -28,7 +28,7 @@ export const Result = (props) => {
       setIsCompPicked("picked");
       checkResult();
     }, 1000);
-  }, [props.userItem]);
+  }, [props]);
 
   return (
     <div
