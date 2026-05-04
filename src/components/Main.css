@@ -1,79 +1,191 @@
 .main-container {
-  background: url("../images/bg-triangle.svg") center center/50% no-repeat;
   height: 300px;
   width: 600px;
-  margin: auto;
-  margin-top: 100px;
+  margin-bottom: 8%;
   position: relative;
 }
 
-.main-container button {
+.bg-triangle,
+.bg-pentagon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.main-container .option {
   width: 180px;
   height: 180px;
   border: 25px solid #fff;
   border-radius: 50%;
   position: absolute;
   cursor: pointer;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-6px);
 }
 
-.main-container button.paper {
-  background: url(../images/icon-paper.svg) center center/50% no-repeat, #f0f0f0;
-  border-color: hsl(230, 89%, 65%);
-  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(230, 89%, 62%);
+.main-container .option.paper {
+  box-shadow: inset 0px 6px hsl(220, 11%, 83%), 0px 6px hsl(230, 63%, 54%);
   left: 75px;
   top: -65px;
 }
 
-.main-container button.scissors {
-  background: url(../images/icon-scissors.svg) center center/50% no-repeat,
-    #f0f0f0;
-    border-color: hsl(40, 84%, 53%);
-  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(39, 89%, 49%);
+.main-container .option.scissors {
+  box-shadow: inset 0px 6px hsl(220, 11%, 83%), 0px 6px hsl(39, 88%, 43%);
   right: 75px;
   top: -65px;
+}
+
+.main-container .option.rock {
+  box-shadow: inset 0px 6px hsl(220, 11%, 83%), 0px 6px hsl(349, 66%, 47%);
+  left: 35%;
+  top: 50%;
+}
+
+.main-container .option.lizard {
+  box-shadow: inset 0px 6px hsl(220, 11%, 83%), 0px 6px hsl(261, 72%, 50%);
+}
+
+.main-container .option.spock {
+  box-shadow: inset 0px 6px hsl(220, 11%, 83%), 0px 6px hsl(189, 58%, 43%);
+}
+
+/* Bonus layout */
+.main-container.bonus {
+  width: 450px;
+  height: 450px;
+}
+
+.main-container.bonus .option {
+  width: 140px;
+  height: 140px;
+  border-width: 15px;
+}
+
+.main-container.bonus .option.scissors {
+  top: 0px;
+  left: 155px;
+  right: auto;
+}
+
+.main-container.bonus .option.spock {
+  top: 120px;
+  left: -5px;
+}
+
+.main-container.bonus .option.paper {
+  top: 120px;
+  right: -5px;
   left: auto;
 }
 
-.main-container button.rock {
-  background: url(../images/icon-rock.svg) center center/50% no-repeat, #f0f0f0;
-  border-color: hsl(349, 70%, 56%);
-  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(349, 71%, 52%);
-  left: 210px;
+.main-container.bonus .option.lizard {
+  bottom: 10px;
+  left: 60px;
   top: auto;
-  bottom: -45px;
+  right: auto;
 }
 
-.main-container button.clicked {
-  box-shadow: inset 0px 0px hsl(220, 11%, 83%), 0px 0px #fff;
-  transform: translate(0px, 8px);
+.main-container.bonus .option.rock {
+  bottom: 10px;
+  right: 60px;
+  top: auto;
+  left: auto;
 }
 
-@media screen and (max-width:426px) {
-  .main-container{
+.main-container .option .icon-img {
+  width: 60px;
+  height: auto;
+}
+
+.main-container .option:active {
+  box-shadow: none !important;
+  transform: none;
+}
+
+@media screen and (max-width: 766px) {
+  .main-container.bonus {
+    width: 320px;
+    height: 320px;
+  }
+
+  .main-container.bonus .option {
+    width: 100px;
+    height: 100px;
+    border-width: 12px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .main-container {
     width: 350px;
-    background-size: 70%;
     margin-top: 60px;
   }
-  
-  .main-container button{
+
+  .bg-triangle,
+  .bg-pentagon {
+    width: 250px;
+    height: auto;
+  }
+
+  .main-container .option {
     width: 140px;
     height: 140px;
     border-width: 15px;
   }
-  
-  .main-container button.paper{
+
+  .main-container .option.paper {
     box-shadow: inset 0px 4px hsl(220, 11%, 83%), 0px 4px hsl(230, 89%, 62%);
     top: -10px;
     left: 10px;
   }
-  .main-container button.scissors{
+  .main-container .option.scissors {
     box-shadow: inset 0px 4px hsl(220, 11%, 83%), 0px 4px hsl(39, 89%, 49%);
     right: 10px;
     top: -10px;
   }
-  .main-container button.rock{
+  .main-container .option.rock {
     box-shadow: inset 0px 4px hsl(220, 11%, 83%), 0px 4px hsl(349, 71%, 52%);
     left: 105px;
     bottom: 10px;
+  }
+
+  .main-container.bonus .option.scissors {
+    top: 0px;
+    left: 110px;
+    right: auto;
+  }
+
+  .main-container.bonus .option.spock {
+    top: 95px;
+    left: -5px;
+  }
+
+  .main-container.bonus .option.paper {
+    top: 95px;
+    right: -5px;
+    left: auto;
+  }
+
+  .main-container.bonus .option.lizard {
+    bottom: -5px;
+    left: 42px;
+    top: auto;
+    right: auto;
+  }
+
+  .main-container.bonus .option.rock {
+    bottom: -5px;
+    right: 42px;
+    top: auto;
+    left: auto;
+  }
+
+  .main-container .option .icon-img {
+    width: 40px;
   }
 }

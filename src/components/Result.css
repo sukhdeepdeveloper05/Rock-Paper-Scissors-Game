@@ -3,8 +3,8 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 640px;
-  height: 320px;
-  margin-top: 4rem;
+  height: 300px;
+  margin-bottom: 8%;
   transition: width 1s ease;
 }
 
@@ -45,33 +45,44 @@
   border: 30px solid #fff;
   background: #f0f0f0;
   border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .userItemImage-container.paper,
 .compItemImage-container.paper {
-  background: url(../images/icon-paper.svg) center center/50% no-repeat, #f0f0f0;
   border-color: hsl(230, 89%, 65%);
-  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(230, 89%, 62%);
+  /* box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(230, 89%, 62%); */
 }
 
 .userItemImage-container.scissors,
 .compItemImage-container.scissors {
-  background: url(../images/icon-scissors.svg) center center/50% no-repeat,
-    #f0f0f0;
   border-color: hsl(40, 84%, 53%);
-  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(39, 89%, 49%);
+  /* box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(39, 89%, 49%); */
 }
 
 .userItemImage-container.rock,
 .compItemImage-container.rock {
-  background: url(../images/icon-rock.svg) center center/50% no-repeat, #f0f0f0;
   border-color: hsl(349, 70%, 56%);
-  box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(349, 71%, 52%);
+  /* box-shadow: inset 0px 8px hsl(220, 11%, 83%), 0px 8px hsl(349, 71%, 52%); */
 }
 
-.userItemImage-container img,
-.compItemImage-container img {
-  width: 80px;
+.userItemImage-container.lizard,
+.compItemImage-container.lizard {
+  border-color: hsl(261, 73%, 60%);
+}
+
+.userItemImage-container.spock,
+.compItemImage-container.spock {
+  border-color: hsl(189, 59%, 53%);
+}
+
+.userItemImage-container .icon-img,
+.compItemImage-container .icon-img {
+  width: 100px;
+  height: auto;
 }
 
 .pickedItems-container > .result-container {
@@ -237,5 +248,10 @@
   .winner::after {
     width: 140px;
     height: 140px;
+  }
+
+  .userItemImage-container .icon-img,
+  .compItemImage-container .icon-img {
+    width: 50px;
   }
 }
